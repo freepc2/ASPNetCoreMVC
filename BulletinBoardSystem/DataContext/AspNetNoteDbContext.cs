@@ -15,7 +15,6 @@ namespace BulletinBoardSystem.DataContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=localhost\SQLEXPRESS; User ID=sa;Password=root");
-
         } 
     }
 }
