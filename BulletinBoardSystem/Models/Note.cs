@@ -16,13 +16,13 @@ namespace BulletinBoardSystem.Models
         /// <summary>
         /// 게시판 제목
         /// </summary>
-        [Required]
-        public string Tilte { get; set; }
+        [Required(ErrorMessage ="제목을 입력하세요")]
+        public string Title { get; set; }
         /// <summary>
         /// 게시판 내용
         /// </summary>
-        [Required]
-        public string Content { get; set; }
+        [Required(ErrorMessage = "내용을 입력하세요")]
+        public string Contents { get; set; }
         /// <summary>
         /// 게시판 작성자
         /// </summary>

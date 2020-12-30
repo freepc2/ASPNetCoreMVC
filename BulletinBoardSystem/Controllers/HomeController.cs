@@ -23,6 +23,10 @@ namespace BulletinBoardSystem.Controllers
             return View();
         }
 
+        public IActionResult LoginSuccess()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

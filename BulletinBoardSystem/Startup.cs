@@ -24,6 +24,15 @@ namespace BulletinBoardSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // DI 의존성 주입 - ASP.NET MVC 4,5 Unity 플러그 사용
+
+            // Session - 서비스에 등록함
+            services.AddSession();
+
+            // Identity
+
+            // Web API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +50,9 @@ namespace BulletinBoardSystem
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Session을 Application에서 사용
+            app.UseSession();
 
             app.UseRouting();
 

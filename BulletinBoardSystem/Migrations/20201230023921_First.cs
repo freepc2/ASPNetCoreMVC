@@ -2,7 +2,7 @@
 
 namespace BulletinBoardSystem.Migrations
 {
-    public partial class SecondMigration : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,8 +27,8 @@ namespace BulletinBoardSystem.Migrations
                 {
                     No = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Tilte = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Contents = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserNo = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

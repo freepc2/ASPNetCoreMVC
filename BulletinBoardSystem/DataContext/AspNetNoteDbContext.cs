@@ -14,7 +14,7 @@ namespace BulletinBoardSystem.DataContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=localhost\SQLEXPRESS; User ID=sa;Password=root");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=AspNetNoteDb;User ID=sa;Password=root");
         } 
     }
 }

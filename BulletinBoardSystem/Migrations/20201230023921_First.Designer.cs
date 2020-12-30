@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulletinBoardSystem.Migrations
 {
     [DbContext(typeof(AspNetNoteDbContext))]
-    [Migration("20201228161854_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20201230023921_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,11 +27,11 @@ namespace BulletinBoardSystem.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Content")
+                    b.Property<string>("Contents")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tilte")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

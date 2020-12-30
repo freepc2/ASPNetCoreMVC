@@ -16,17 +16,17 @@ namespace BulletinBoardSystem.Models
         /// <summary>
         /// User ID
         /// </summary>
-        [Required]
+        [Required(ErrorMessage ="사용자의 아이디를 입력해주세요")]
         public string ID { get; set; }
         /// <summary>
         /// User Password
         /// </summary>
-        [Required]
+        [Required(ErrorMessage ="사용자의 패스워드를 입력해주세요")]
         public string Password { get; set; }
         /// <summary>
         /// User 이름
         /// </summary>
-        [Required]
+        [Required(ErrorMessage ="사용자의 이름을 입력해주세요")]
         public string Name { get; set; }
     }
 }
