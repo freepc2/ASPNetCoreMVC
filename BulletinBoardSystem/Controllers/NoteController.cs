@@ -2,6 +2,7 @@
 using BulletinBoardSystem.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BulletinBoardSystem.Controllers
@@ -83,6 +84,10 @@ namespace BulletinBoardSystem.Controllers
                 return View(note);
             }
         }
+        public IActionResult Edit(Note model)
+        {
+            return View(model);
+        }
         /// <summary>
         /// 게시물 수정
         /// </summary>
@@ -103,18 +108,13 @@ namespace BulletinBoardSystem.Controllers
 
                 using (var db = new AspNetNoteDbContext())
                 {
-                    var old = db.Notes.FirstOrDefault(u => u.No.Equals(model.No));
-                    if(old != null)
-                    {
-                        old = model;
-                        db.Update(model);
-                    }
-                    db.Notes.Add(model);
+
+                    db.Entry(model).State = EntityState.Modified;
                     if (db.SaveChanges() > 0)   //Commit 성공갯수 리턴
                     {
                         return Redirect("Index");
                     }
-                    ModelState.AddModelError(string.Empty, "게시물을 저장 할수 없습니다.");
+                    ModelState.AddModelError(string.Empty, "게시물을 수정 할수 없습니다.");
                 }
             }
             return View(model);
